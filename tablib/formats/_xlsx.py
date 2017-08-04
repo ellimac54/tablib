@@ -144,6 +144,9 @@ def dset_sheet(dataset, ws, freeze_panes=True):
                     else:
                         cell.value = unicode('%s' % col, errors='ignore')
                 except TypeError:
-                    cell.value = unicode(col)
+                    if type(col) == int or type(col) == float:
+                        ws.cell('%s%s'%(col_idx, row_number)).value = col
+                    else:
+                        ws.cell('%s%s'%(col_idx, row_number)).value = unicode(col)
 
 
