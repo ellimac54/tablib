@@ -18,8 +18,8 @@ from tablib.compat import OrderedDict, unicode
 
 
 __title__ = 'tablib'
-__version__ = '0.11.5'
-__build__ = 0x001104
+__version__ = '0.12.1'
+__build__ = 0x001201
 __author__ = 'Kenneth Reitz'
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2017 Kenneth Reitz'
@@ -570,6 +570,18 @@ class Dataset(object):
         """
         pass
 
+    @property
+    def df():
+        """A DataFrame representation of the :class:`Dataset` object.
+
+        A dataset object can also be imported by setting the :class:`Dataset.df` attribute: ::
+
+            data = tablib.Dataset()
+            data.df = DataFrame(np.random.randn(6,4))
+
+        Import assumes (for now) that headers exist.
+        """
+        pass
 
     @property
     def json():

@@ -50,6 +50,7 @@ install = [
     'pyyaml',
 ]
 
+
 with open('tablib/core.py', 'r') as fd:
     version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]',
                         fd.read(), re.MULTILINE).group(1)
@@ -71,7 +72,6 @@ setup(
         'Natural Language :: English',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
@@ -80,4 +80,7 @@ setup(
     ],
     tests_require=['pytest'],
     install_requires=install,
+    extras_require={
+        'pandas': ['pandas'],
+    },
 )

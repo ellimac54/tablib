@@ -5,7 +5,6 @@
 import json
 import unittest
 import sys
-import os
 
 import datetime
 
@@ -383,6 +382,7 @@ class TablibTestCase(unittest.TestCase):
         data.ods
         data.html
         data.latex
+        data.df
 
     def test_datetime_append(self):
         """Passes in a single datetime and a single date and exports."""
