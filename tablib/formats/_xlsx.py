@@ -118,8 +118,8 @@ def dset_sheet(dataset, ws, freeze_panes=True):
     for i, row in enumerate(_package):
         row_number = i + 1
         for j, col in enumerate(row):
-            col_idx = get_column_letter(j + 1)
-            cell = ws.cell('%s%s' % (col_idx, row_number))
+            col_number = j + 1
+            cell = ws.cell(row_number, col_number)
 
             # bold headers
             if (row_number == 1) and dataset.headers:
@@ -145,8 +145,8 @@ def dset_sheet(dataset, ws, freeze_panes=True):
                         cell.value = unicode('%s' % col, errors='ignore')
                 except TypeError:
                     if type(col) == int or type(col) == float:
-                        ws.cell('%s%s'%(col_idx, row_number)).value = col
+                        ws.cell(row_number, col_number).value = col
                     else:
-                        ws.cell('%s%s'%(col_idx, row_number)).value = unicode(col)
+                        ws.cell(row_number, col_number).value = unicode(col)
 
 
